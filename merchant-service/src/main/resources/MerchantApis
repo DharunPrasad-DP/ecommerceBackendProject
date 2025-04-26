@@ -1,0 +1,22 @@
+http://localhost:8082/palaSarakku/merchant/createMerchant
+{
+    "merchantCode": "MER-002",
+    "name": "Test Merchant Two",
+    "email": "test2@example.com",
+    "phoneNumber": "+1234567890",
+    "address": "123 Test Street",
+    "rating": 0.4
+}
+
+http://localhost:8082/palaSarakku/merchant/updateMerchant/MER-001
+{
+    "merchantCode": "MER-001",
+    "name": "Updated Test Merchant",
+    "email": "updated@example.com"
+}
+
+http://localhost:8082/palaSarakku/merchant/getMerchantById/MER-001
+
+http://localhost:8082/palaSarakku/merchant/listAllMerchants?page=0&size=50
+
+http://localhost:8082/palaSarakku/merchant/deleteMerchantById/MER-002
