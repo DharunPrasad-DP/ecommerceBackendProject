@@ -1,4 +1,4 @@
-package com.ecommerce.productservice.domain;
+package com.ecommerce.searchservice.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,9 +10,9 @@ import java.util.Map;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProductEvent {
-    private String eventType;
+    private String eventType; // CREATE, UPDATE, DELETE
     private String productId;
-    private Product product;
-    private Map<String, Object> updatedFields;
+    private Product product; // For CREATE events
+    private Map<String, Object> updatedFields; // For UPDATE events
     private Long timestamp;
 }

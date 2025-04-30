@@ -16,4 +16,6 @@ public interface ProductService {
     void updateProduct(String productId, ProductDto productDto) throws NoSuchFieldException;
 
     boolean deleteProduct(String productId) throws NoSuchFieldException;
+
+    void updateProductStock(String productId, int quantity) throws NoSuchFieldException;
 }

@@ -39,8 +39,6 @@ public class MerchantServiceImpl implements MerchantService {
     public void createMerchant(Merchantdto merchantdto) {
         merchantdto.setCreatedDate(Instant.now().toEpochMilli());
         merchantRepository.insert(convertToDomain(merchantdto));
-        //        Fire Kafka event
-//        merchantKafkaProducerService.sendProductCreatedEvent(merchantEvent);
     }
 
     @Override
@@ -55,12 +53,16 @@ public class MerchantServiceImpl implements MerchantService {
         if (merchantdto.getEmail() != null) merchant.setEmail(merchantdto.getEmail());
         if (merchantdto.getPhoneNumber() != null) merchant.setPhoneNumber(merchantdto.getPhoneNumber());
         if (merchantdto.getAddress() != null) merchant.setAddress(merchantdto.getAddress());
-        if (merchantdto.getRating() != null) merchant.setRating(merchantdto.getRating());
+        if (merchantdto.getRating() != null) merchant.setMerchantRating(merchantdto.getRating());
         merchant.setCreatedDate(Instant.now().toEpochMilli());
 
         //        Update to DB
         Merchant updatedMerchant = merchantRepository.save(merchant);
-//        fire kafka event
+       //        fire kafka event
+        MerchantEvent merchantEvent = new MerchantEvent();
+        merchantEvent.setMerchantCode(updatedMerchant.getMerchantCode());
+        merchantEvent.setMerchantRating(updatedMerchant.getMerchantRating());
+        merchantKafkaProducerService.sendProductCreatedEvent(merchantEvent);
     }
 
     @Override
@@ -86,6 +88,5 @@ public class MerchantServiceImpl implements MerchantService {
             return true;
         }
         return false;
-        //        fireDelete event(productId);
     }
 }
