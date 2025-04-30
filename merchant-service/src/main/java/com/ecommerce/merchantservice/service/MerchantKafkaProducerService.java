@@ -1,6 +1,5 @@
 package com.ecommerce.merchantservice.service;
 
-import com.ecommerce.merchantservice.domain.Merchant;
 import com.ecommerce.merchantservice.domain.MerchantEvent;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;

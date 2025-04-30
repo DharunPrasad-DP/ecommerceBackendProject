@@ -2,7 +2,6 @@ package com.ecommerce.merchantservice.service;
 
 import com.ecommerce.merchantservice.dto.Merchantdto;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 
 import java.util.Optional;

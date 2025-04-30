@@ -1,4 +1,5 @@
-package com.ecommerce.merchantservice.domain;
+package com.ecommerce.searchservice.domain;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

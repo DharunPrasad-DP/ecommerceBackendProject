@@ -1,0 +1,15 @@
+http://localhost:8084/palaSarakku/cart/addToCart
+{
+    "email": "user@example.com",
+    "productId": "MER-001_PROD-001",
+    "quantity": 2,
+    "price": 99.99
+}
+
+http://localhost:8084/palaSarakku/cart/getCart/user@example.com
+
+http://localhost:8084/palaSarakku/cart/removeFromCart/user@example.com/MER-001_PROD-001
+
+http://localhost:8084/palaSarakku/cart-order/checkout/user@example.com
+
+curl -X GET "http://localhost:8084/palaSarakku/order/history/user@example.com?page=0&size=10"
